@@ -81,6 +81,23 @@ namespace EventLookup.Controllers
         }
 
         [HttpPost]
+        [Route("change-password")]
+        public async Task<IActionResult> ChangePassword(ChangePasswordDTO user)
+        {
+            try {            
+                var isSuccessful = await _userService.ChangePassword(user);
+                var result = "{ \"Success\" : " + isSuccessful + " }";
+                return Ok(result);
+            }
+            catch(Exception e)
+            {
+                BadRequest(e.Message);
+            }
+
+            return Ok();
+        }
+
+        [HttpPost]
         [Route("token-login")]
         public async Task<IActionResult> UserLoginWithToken()
         {

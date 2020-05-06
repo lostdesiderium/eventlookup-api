@@ -1,30 +1,21 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using AutoMapper;
-using Microsoft.EntityFrameworkCore;
-
 using EventLookup.Domain.Repositories;
 using EventLookup.Domain.Services;
-using EventLookup.Domain.DTOs.Event;
 using EventLookup.Persistence.Context;
 using EventLookup.Persistence.Repositories;
 using EventLookup.Services;
-using Microsoft.OpenApi.Models;
-
-using Newtonsoft;
-using Microsoft.Extensions.FileProviders;
-using System.IO;
-using Microsoft.AspNetCore.Http;
-
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
+using Microsoft.OpenApi.Models;
+using System.IO;
 
 namespace EventLookup
 {
@@ -41,7 +32,8 @@ namespace EventLookup
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers()
-                .AddNewtonsoftJson(x => {
+                .AddNewtonsoftJson(x =>
+                {
                     x.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();
                     x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                 });
@@ -65,8 +57,8 @@ namespace EventLookup
             });
 
             services.AddAutoMapper(typeof(Startup));
-            services.AddDbContext<EventLookupContext>(options => 
-                options.UseSqlServer(Configuration.GetConnectionString("EventLookupConnString")) );
+            services.AddDbContext<EventLookupContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("EventLookupConnString")));
 
             services.AddHttpContextAccessor();
 
@@ -100,7 +92,7 @@ namespace EventLookup
             {
                 FileProvider = new PhysicalFileProvider(
                             Path.Combine(Directory.GetCurrentDirectory(), @"Shared/Files/Images")),
-                RequestPath = new PathString( "/" + Configuration.GetValue<string>("SharedImagesPath") )
+                RequestPath = new PathString("/" + Configuration.GetValue<string>("SharedImagesPath"))
             });
 
 

@@ -100,6 +100,35 @@ namespace EventLookup.Services
             return false;
         }
 
+
+        public async Task<bool> ChangePassword(ChangePasswordDTO user)
+        {
+            var currentUser = await _userRepository.GetUser(user.Id);
+
+            byte[] passwordInputBytes = System.Text.Encoding.ASCII.GetBytes(user.OldPassword);
+            string passwordInputHash;
+            using (SHA256Managed manager = new SHA256Managed())
+            {
+                passwordInputBytes = manager.ComputeHash(passwordInputBytes);
+                passwordInputHash = System.Text.Encoding.ASCII.GetString(passwordInputBytes);
+            }
+
+            if (passwordInputHash.Equals(currentUser.Password))
+            {
+                passwordInputBytes = System.Text.Encoding.ASCII.GetBytes(user.NewPassword);
+                using (SHA256Managed manager = new SHA256Managed())
+                {
+                    passwordInputBytes = manager.ComputeHash(passwordInputBytes);
+                    passwordInputHash = System.Text.Encoding.ASCII.GetString(passwordInputBytes);
+                }
+                currentUser.Password = passwordInputHash;
+                bool isSuccessful = await _userRepository.SaveUser(currentUser);
+                return isSuccessful;
+            }
+
+            return false;
+        }
+
         public async Task<bool> RemoveUserEvent(int userId, int eventId)
         {
             return await _userRepository.RemoveUserEvent(userId, eventId);
@@ -189,6 +218,7 @@ namespace EventLookup.Services
                 else
                 {
                     returnableUser.Message = consts.getInvalidPasswordTuple();
+                    return returnableUser;
                 }
             }
 

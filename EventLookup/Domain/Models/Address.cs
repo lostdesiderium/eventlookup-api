@@ -34,6 +34,11 @@ namespace EventLookup.Domain.Models
             return $"{City} {Street1}, {Country}";
         }
 
+        public string GetStreet()
+        {
+            return Street1;
+        }
+
 
     }
 }

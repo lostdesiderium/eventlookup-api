@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EventLookup.Controllers.EventController">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAI=</HashCode>
+      <FileName>Controllers\EventController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventLookup.Controllers.UsersController">
+    <Position X="14.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAIAAAAAAAEAAEAAgAAAUAAAAAAEQAEAAAgAAA=</HashCode>
+      <FileName>Controllers\UsersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventLookup.Domain.DTOs.Event.EventListItemDTO">
+    <Position X="12.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAoAAgCAEAAgABAABAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Domain\DTOs\Event\EventListItemDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventLookup.Domain.DTOs.Image.ImageDTO">
+    <Position X="12.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAgAAAAAAAAAAAAAACAAgAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Domain\DTOs\Image\ImageDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventLookup.Domain.DTOs.User.UserDTO">
+    <Position X="16.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAACAAAAAAAAAAAIgAAAAgAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Domain\DTOs\User\UserDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventLookup.Domain.DTOs.User.UserEventDTO">
+    <Position X="12.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAgAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\DTOs\User\UserEventDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventLookup.Domain.Models.Address">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQAAAQAgACAAAAAIAAAAAAAAAg4AAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Domain\Models\Address.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventLookup.Domain.Models.AuthenticationUser">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAABAAA=</HashCode>
+      <FileName>Domain\Models\AuthenticationUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventLookup.Domain.Models.Event">
+    <Position X="18" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAgAAgCAEAAAAAAAAACAAAgABCCAgAAAEAAAAE=</HashCode>
+      <FileName>Domain\Models\Event.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventLookup.Domain.Models.Image">
+    <Position X="11" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAACAAAAAACAAgAAABEACAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Models\Image.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventLookup.Domain.Models.Ticket">
+    <Position X="16.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAQAAAAgAAAgAAAQAAgAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Models\Ticket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventLookup.Domain.Models.User">
+    <Position X="18" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAACAAAAAAAAAAAIgAAAAgAAACAAAAAAABAEA=</HashCode>
+      <FileName>Domain\Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventLookup.Domain.Models.UserEvent">
+    <Position X="11" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABgAAgAAAAAAAAAAAAAAgAAgAAAAwAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Models\UserEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventLookup.Domain.Profiles.EventLookupProfile">
+    <Position X="18" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Profiles\EventLookupProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventLookup.Persistence.Context.DbSeeder">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Persistence\Context\DbSeeder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventLookup.Persistence.Context.EventLookupContext">
+    <Position X="16.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAACAAAAAAAAAAAAAAAAAAEgAgABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Persistence\Context\EventLookupContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventLookup.Persistence.Repositories.BaseRepository" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Persistence\Repositories\BaseRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventLookup.Persistence.Repositories.EventRepository" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAACAA=</HashCode>
+      <FileName>Persistence\Repositories\EventRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EventLookup.Persistence.Repositories.UserRepository" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAIAAgAAAAEAAAAAAAAAUAAAAAAEQAAIAAAAAA=</HashCode>
+      <FileName>Persistence\Repositories\UserRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EventLookup.Services.EventService" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAARAAAAAAAAAAAAAABCAAAAAAAJBAAAAAAIAAACAA=</HashCode>
+      <FileName>Services\EventService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EventLookup.Services.UserService" BaseTypeListCollapsed="true">
+    <Position X="7" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAABAAoIEAAACAEAAEBCgBAAUAAFBAAEQAAIAAAAAA=</HashCode>
+      <FileName>Services\UserService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EventLookup.Shared.Consts">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAgAAgAAAAgAAAIAAAAAAAAABBAAAYAAoQAAAAAA=</HashCode>
+      <FileName>Shared\Consts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="EventLookup.Domain.Repositories.IEventRepository">
+    <Position X="5.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAACAA=</HashCode>
+      <FileName>Domain\Repositories\IEventRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EventLookup.Domain.Repositories.IUserRepository">
+    <Position X="9.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAIAAgAAAAEAAAAAAAAAUAAAAAAEQAAIAAAAAA=</HashCode>
+      <FileName>Domain\Repositories\IUserRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EventLookup.Domain.Services.IEventService">
+    <Position X="5.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAACAA=</HashCode>
+      <FileName>Domain\Services\IEventService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EventLookup.Domain.Services.IUserService">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAIAAAAAAAEAAEAAgAAAUAAAAAAEQAAAAAAAAA=</HashCode>
+      <FileName>Domain\Services\IUserService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

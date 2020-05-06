@@ -1,0 +1,184 @@
+﻿@page "/"
+@model EventLookupBO.Pages.EventsModel
+@{
+    ViewData["Title"] = "Events";
+}
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Add event</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="event-modal-body" data-event-action="add">
+
+                <!-- title input -->
+                <input type="text" class="form-control mb-3" id="event-title" placeholder="Title">
+                <textarea class="form-control mb-3" id="event-short-description" placeholder="Short description *"></textarea>
+                <textarea class="form-control mb-3" id="event-long-description" placeholder="Long description *"></textarea>
+                <input type="text" class="form-control mb-3" id="event-country" placeholder="Country *">
+                <input type="text" class="form-control mb-3" id="event-city" placeholder="City *">
+                <input type="text" class="form-control mb-3" id="event-district" placeholder="District">
+                <input type="text" class="form-control mb-3" id="event-street" placeholder="Street *">
+                <input type="number" min="0" class="form-control mb-3" id="event-latitude" placeholder="Latitude *">
+                <input type="number" min="0" class="form-control mb-3" id="event-longitude" placeholder="Longitude *">
+
+                <input type="text" class="form-control mb-3 datetimepicker" id="event-start-date" data-date-format="yyyy-mm-dd hh:ii" placeholder="Start date *">
+                <input type="text" class="form-control mb-3 datetimepicker" id="event-finish-date" data-date-format="yyyy-mm-dd hh:ii" placeholder="Finish date *">
+
+                <input type="number" min="1" class="form-control mb-3" id="event-length-in-days" placeholder="Days event active *">
+                <input type="text" class="form-control mb-3" id="event-tickets-url" placeholder="Ticket distributor website URL">
+
+                <!-- file upload -->
+                
+                <div class="input-group mb-3">
+                    <div class="image-preview col-12 d-flex flex-column justify-content-center align-items-center">
+                        <img src="../img/upload-photo.svg" class="preview-photo" height="100" width="200" alt="Alternate Text" />
+                        <img src="../img/question-mark.svg" height="24" width="24" data-toggle="tooltip" data-placement="right"
+                             title="This is event COVER photo, FullHD is recommended resolution or with same aspect ratio" alt="Alternate Text" />
+                    </div>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">1st Photo</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label photo-1" data-image-id="0" for="inputGroupFile01">Choose file *</label>
+                    </div>
+                </div>
+
+                
+                <div class="input-group mb-3">
+                    <div class="image-preview col-12 d-flex flex-column justify-content-center align-items-center">
+                        <img src="../img/upload-photo.svg" class="preview-photo" height="100" width="200" alt="Alternate Text" />
+                        <img src="../img/question-mark.svg" height="24" width="24" data-toggle="tooltip" data-placement="right" 
+                             title="FullHD is recommended resolution or with same aspect ratio" alt="Alternate Text" />
+                    </div>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon02">2nd Photo</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile02" aria-describedby="inputGroupFileAddon02">
+                        <label class="custom-file-label photo-2" data-image-id="0" for="inputGroupFile02">Choose file</label>
+                    </div>
+                </div>
+
+
+                <div class="input-group mb-3">
+                    <div class="image-preview col-12 d-flex flex-column justify-content-center align-items-center">
+                        <img src="../img/upload-photo.svg" class="preview-photo" height="100" width="200" alt="Alternate Text" />
+                        <img src="../img/question-mark.svg" height="24" width="24" data-toggle="tooltip" data-placement="right"
+                             title="FullHD is recommended resolution or with same aspect ratio" alt="Alternate Text" />
+                    </div>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon03">3rd Photo</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03">
+                        <label class="custom-file-label photo-3" data-image-id="0" for="inputGroupFile03">Choose file</label>
+                    </div>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="image-preview col-12 d-flex flex-column justify-content-center align-items-center">
+                        <img src="../img/upload-photo.svg" class="preview-photo" height="100" width="200" alt="Alternate Text" />
+                        <img src="../img/question-mark.svg" height="24" width="24" data-toggle="tooltip" data-placement="right"
+                             title="FullHD is recommended resolution or with same aspect ratio" alt="Alternate Text" />
+                    </div>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon04">4th Photo</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+                        <label class="custom-file-label photo-4" data-image-id="0" for="inputGroupFile01">Choose file</label>
+                    </div>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="image-preview col-12 d-flex flex-column justify-content-center align-items-center">
+                        <img src="../img/upload-photo.svg" class="preview-photo" height="100" width="200" alt="Alternate Text" />
+                        <img src="../img/question-mark.svg" height="24" width="24" data-toggle="tooltip" data-placement="right"
+                             title="FullHD is recommended resolution or with same aspect ratio" alt="Alternate Text" />
+                    </div>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon05">5th Photo</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile05" aria-describedby="inputGroupFileAddon05">
+                        <label class="custom-file-label photo-5" data-image-id="0" for="inputGroupFile01">Choose file</label>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="action-save-event">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="alert-box">
+    @*<div class="alert alert-success alert-dismissable fade show" role="alert">
+        Event saved successfully
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>*@
+</div>
+
+<h2 class="h2-title mt-5">Events</h2>
+<div class="events-container">
+
+    <form action="/" method="post">
+        <table class="table events-table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Cover</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Start date</th>
+                    <th scope="col">Finish date</th>
+                    <th scope="col">Controls</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var i = 0; i < @Model.eventListItemDTO.Count; i++)
+                {
+                    <tr data-event-id="@Model.eventListItemDTO[i].EventId">
+                        <th scope="row">@(i + 1)</th>
+                        <td><img src="@Model.eventListItemDTO[i].CoverImagePath" height="100" width="200" /></td>
+                        <td>@Model.eventListItemDTO[i].Title</td>
+                        <td>@Model.eventListItemDTO[i].AddressCountryCityStreet1</td>
+                        <td>@Model.eventListItemDTO[i].StartDate</td>
+                        <td>@Model.eventListItemDTO[i].FinishDate</td>
+                        <td>
+                            <div class="icon-containers-row">
+                                <span class="icon-container">
+                                    <img class="action-icon edit" data-event-id="@Model.eventListItemDTO[i].EventId" data-toggle="modal" data-target="#exampleModalCenter" 
+                                         src="../img/edit-outline.svg" alt="Alternate Text" height="32" width="24" />
+                                </span>
+                                <span class="icon-container">
+                                    <img class="action-icon delete" data-event-id="@Model.eventListItemDTO[i].EventId" src="../img/bin-outline.svg" alt="Alternate Text" height="32" width="24" />
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </form>
+
+
+    <a href="#" class="float icon-container bg-primary" id="add-event" data-toggle="modal" data-target="#exampleModalCenter">
+        <img class="add my-float" src="../img/add.svg" alt="add" height="24" width="24" />
+    </a>
+
+</div>
+

@@ -19,5 +19,6 @@ namespace EventLookup.Domain.Services
         Task<bool> RemoveUserEvent(int userId, int eventId);
         Task<bool> UploadUserImage(User user, string token);
         Task<bool> MarkUserEvent(UserEvent userEvent);
+        Task<bool> ChangePassword(ChangePasswordDTO user);
     }
 }

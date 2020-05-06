@@ -11,5 +11,8 @@ namespace EventLookup.Domain.Services
     {
         Task<IEnumerable<EventListItemDTO>> ListAsync();
         Task<Event> GetEvent(int id);
+        Task<int> AddEvent(EventDetailedDTO ev);
+        Task<bool> Edit(EventDetailedDTO ev);
+        Task<bool> Delete(int eventId);
     }
 }

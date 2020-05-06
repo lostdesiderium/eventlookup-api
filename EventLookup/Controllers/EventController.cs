@@ -45,5 +45,38 @@ namespace EventLookup.Controllers
 
             return Ok(eventById);
         }
+
+        [HttpPost]
+        [Route("add-event")]
+        public async Task<ActionResult> PostEvent(EventDetailedDTO ev){
+
+            var eventId = await _eventService.AddEvent(ev);
+            if (eventId > 0)
+                return Ok(eventId);
+
+            return BadRequest();  
+        }
+
+        [HttpPost]
+        [Route("remove-event/{id}")]
+        public async Task<ActionResult> DeleteEvent(int id)
+        {
+            bool isSuccess = await _eventService.Delete(id);
+            if (isSuccess)
+                return Ok(isSuccess);
+
+            return BadRequest();
+        }
+        
+        [HttpPost]
+        [Route("update-event")]
+        public async Task<ActionResult> EditEvent(EventDetailedDTO ev)
+        {
+            bool isSuccess = await _eventService.Edit(ev);
+            if (isSuccess)
+                return Ok(isSuccess);
+
+            return BadRequest();
+        }
     }
 }

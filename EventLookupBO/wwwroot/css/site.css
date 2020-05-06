@@ -1,0 +1,208 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px; 
+}
+.row{
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+.main-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: url("../img/backgroud.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    visibility:hidden;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+.login-container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.login-form {
+    width: 50%;
+    padding: 5%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.h2-title {
+    text-align: center;
+    color: #333;
+}
+.login-container form {
+    padding: 10%;
+}
+.btnSubmit {
+    width: 100%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.login-form .btnSubmit {
+    font-weight: 600;
+    color: #fff;
+    background-color: #0062cc;
+}
+
+header, footer{
+    background: rgba(240, 240, 240, 1);
+}
+
+.events-container {
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    max-height: 70vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.events-table{
+    
+}
+.events-table tr td {
+    vertical-align: middle;
+    
+}
+    .events-container::-webkit-scrollbar {
+    width: 5px;
+}
+.events-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.events-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+.events-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.events-container-fluid {
+    padding: 0 5%;
+}
+.action-icon{
+    transition: 0.3s;
+    margin: 0 .5rem;
+    cursor: pointer;
+
+    border-radius: 50%;
+}
+.icon-containers-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    padding: 4px;
+    border-radius: 50%;
+}
+.icon-container:hover {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.19);
+}
+.action-icon:hover {
+    transform: scale(1.1);
+}
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 80px;
+    right: 40px;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-dialog.modal-dialog-centered {
+    min-width: 50vw !important;
+}
+.image-preview{
+    padding: 1rem;
+}
+.image-preview img{
+    border: 1px dashed black;
+    border-radius: 1rem;    
+}

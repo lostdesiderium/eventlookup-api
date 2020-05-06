@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EventLookupBO</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">EventLookupBO</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Events">Events</a>
+                        </li>
+                    </ul>
+                    
+                    @{
+                        var userState = UserState.Instance.IsAuthenticated();
+                    }
+
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                    @*<ul class="navbar-nav flex-grow-1 justify-content-end">
+                        <li class="nav-item align-self-end">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
+                        </li>
+                        <li class="nav-item align-self-end">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Register">Sign Up</a>
+                        </li>
+                    </ul>*@
+                    }
+                    else {
+                        <span>@User.Identity.Name</span>
+                    }
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="main-background-image"></div>
+    <div class="container-fluid events-container-fluid">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - EventLookupBO
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap-datetimepicker.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/fontawesome.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/login.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+
+    <script>
+        var webAPIUrlBase = "http://localhost:19422/api/";
+        function loginWithToken() {
+        let userDTO = {
+            'Email': '',
+            'Password': '',
+            'DisplayName': '',
+            'Token"': getTokenFromLocalStorage(),
+            'Biography': ''
+        }
+        console.log(userDTO);
+
+        let url = webAPIUrlBase + 'users/token-login';
+        let stringifiedData = JSON.stringify(userDTO);
+        console.log(userDTO);
+        $.ajax({
+            url: url,
+            data: stringifiedData,
+            method: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            beforeSend: function (xhr) {   //Include the bearer token in header
+                xhr.setRequestHeader("Authorization", 'Bearer ' + getTokenFromLocalStorage());
+            },
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (xhr, error) {
+                console.log('xhr', xhr);
+                console.log('error --- ', error);
+            }
+        });
+    }
+    </script>
+</body>
+</html>

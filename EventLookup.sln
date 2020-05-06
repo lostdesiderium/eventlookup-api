@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventLookup", "EventLookup\EventLookup.csproj", "{F8518CA7-3CC0-48EB-8B1E-ADDEA0016129}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventLookup", "EventLookup\EventLookup.csproj", "{F8518CA7-3CC0-48EB-8B1E-ADDEA0016129}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventLookupBO", "EventLookupBO\EventLookupBO.csproj", "{EBAB7081-2AD4-473E-87BC-925BD61688FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F8518CA7-3CC0-48EB-8B1E-ADDEA0016129}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8518CA7-3CC0-48EB-8B1E-ADDEA0016129}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8518CA7-3CC0-48EB-8B1E-ADDEA0016129}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBAB7081-2AD4-473E-87BC-925BD61688FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBAB7081-2AD4-473E-87BC-925BD61688FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBAB7081-2AD4-473E-87BC-925BD61688FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBAB7081-2AD4-473E-87BC-925BD61688FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

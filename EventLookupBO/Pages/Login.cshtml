@@ -1,0 +1,40 @@
+﻿@page
+@model EventLookupBO.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="login-container bg-white">
+    <h2 class="h2-title mt-2">Login</h2>
+
+    <div class="row d-flex flex-column justify-content-center align-items-center">
+        <div class="mt-2 col-md-6 login-form">
+            @*<div class="d-flex flex-column align-items-center" id="login-form">
+                <div class="form-group col-12 mt-3">
+                    <input type="email" class="form-control" placeholder="Email *" value="" id="email"/>
+                </div>
+                <div class="form-group col-12">
+                    <input type="password" class="form-control" placeholder="Password *" value="" id="password"/>
+                </div>
+                <div class="form-group col-6 align-self-center">
+                    <input type="submit" name="loginSubmit" id="login-submit" class="btnSubmit" value="Login" />
+                </div>
+            </div>
+        </div>*@
+            <form method="post" class="d-flex flex-column align-items-center" id="login-form">
+                <div class="form-group col-12 mt-3">
+                    <input asp-for="Email" type="email" class="form-control" placeholder="Email *" value="" id="email"/>
+                </div>
+                <div class="form-group col-12">
+                    <input asp-for="Password" type="password" class="form-control" placeholder="Password *" value="" id="password"/>
+                </div>
+                <div class="form-group col-6 align-self-center">
+                    <input type="submit" name="loginSubmit" id="login-submit" class="btnSubmit" value="Login" />
+                </div>
+            </form>
+        </div>
+        </div>
+</div>
+
+
+
